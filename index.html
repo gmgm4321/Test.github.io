@@ -29,10 +29,15 @@ if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
 			}, 1000);
 			window.location = ('youtube://www.youtube.com/watch?v=h-yq-bZKMtw');
          } else if (/(Android)/i.test(navigator.userAgent)) { 
-             //alert(navigator.userAgent); 
-             alert('Android');
+            var before = new Date().valueOf();
+			setTimeout(function(){
+			var after = new Date().valueOf();
+			if(after - before > 200){ return; }
+			window.location = ('https://www.youtube.com/watch?v=h-yq-bZKMtw');
+    }		,50);  
+			window.location = ("youtube://www.youtube.com/watch?v=h-yq-bZKMtw");
          } else { 
-             alert('PC');
+             window.location = ('https://www.youtube.com/watch?v=h-yq-bZKMtw');
          };
 }
 </script>
