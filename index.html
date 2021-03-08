@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
-<body>
-<button onclick="myFunction()">Click me</button>
+<style>
+.button {
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 60px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
+</style>
+<body>
+<button onclick="myFunction()" class="button">Click me</button>
 <script>
 function myFunction() {
 if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) { 
              //alert(navigator.userAgent); 
-            alert('这是IOS');
+            var before = new Date().valueOf();
+			setTimeout(function () {
+			var after = new Date().valueOf();
+			if(after - before > 2000){ return; }
+			window.location = ('https://www.youtube.com/watch?v=h-yq-bZKMtw');
+			}, 1000);
+			window.location = ('youtube://www.youtube.com/watch?v=h-yq-bZKMtw');
          } else if (/(Android)/i.test(navigator.userAgent)) { 
              //alert(navigator.userAgent); 
-             alert('这是Android');
+             alert('Android');
          } else { 
-             alert('这是PC');
+             alert('PC');
          };
 }
 </script>
